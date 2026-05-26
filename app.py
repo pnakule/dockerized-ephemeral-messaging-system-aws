@@ -6,15 +6,6 @@ from config import DB_CONFIG
 
 app = Flask(__name__)
 
-@app.before_request
-def restrict_access():
-
-    if request.path == "/health":
-        return
-
-#    if request.headers.get("xxx") != "xxx":
-#       abort(403)
-
 # ── Database ──────────────────────────────────────────────────────────────────
 def get_db_connection():
     return mysql.connector.connect(**DB_CONFIG)
@@ -37,6 +28,17 @@ def init_db():
     conn.commit()
     cursor.close()
     conn.close()
+
+
+# Automatically create table on startup
+init_db()
+
+
+@app.before_request
+def restrict_access():
+
+    if request.path == "/health":
+        return
 
 
 # ── Routes ────────────────────────────────────────────────────────────────────
@@ -152,5 +154,4 @@ def health():
 
 
 if __name__ == "__main__":
-    init_db()
     app.run(host="0.0.0.0", port=8000, debug=False)
