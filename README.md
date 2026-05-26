@@ -7,12 +7,12 @@ This project went through multiple deployment versions during the learning proce
 ### Version 1 — AWS Infrastructure Focus
 Focused mainly on learning AWS architecture, automation, and service integrations.
 
-[Version 1 Architecture README](#https://github.com/pnakule/ephemeral-messaging-system-aws/edit/main/LIVE-ARCHITECTURE.md](https://github.com/pnakule/ephemeral-messaging-system-aws/blob/main/README.md))
+[Version 1 Architecture README](https://github.com/pnakule/ephemeral-messaging-system-aws/blob/main/README.md)
 
 ### Version 2 — Cost Optimized Deployment
 The infrastructure was later simplified to reduce AWS costs while keeping the project publicly accessible as a live demo.
 
-[Version 2 Architecture README](#https://github.com/pnakule/ephemeral-messaging-system-aws/edit/main/LIVE-ARCHITECTURE.md)
+[Version 2 Architecture README](https://github.com/pnakule/ephemeral-messaging-system-aws/edit/main/LIVE-ARCHITECTURE.md)
 
 ### Current Live Version — Dockerized Deployment
 The current live deployment focuses mainly on:
