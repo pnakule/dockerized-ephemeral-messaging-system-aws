@@ -19,8 +19,8 @@ services:
     restart: always
 
     environment:
-      MYSQL_ROOT_PASSWORD: xyz
-      MYSQL_DATABASE: xyz
+      MYSQL_ROOT_PASSWORD: Ephemeral@0.
+      MYSQL_DATABASE: ephemeraldb
 
     ports:
       - "3306:3306"
