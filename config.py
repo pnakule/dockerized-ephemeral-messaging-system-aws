@@ -1,3 +1,7 @@
+# NOTE:
+# Default values are included only for local/demo purposes.
+# Production credentials should be managed securely using environment variables or secret management solutions.
+
 import os
 
 DB_CONFIG = {
