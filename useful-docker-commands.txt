@@ -1,0 +1,37 @@
+Useful Docker Commands
+
+# Build and start containers
+sudo docker compose up --build -d
+
+# Stop all containers
+sudo docker compose down
+
+# Restart containers
+sudo docker compose restart
+
+# View running containers
+sudo docker ps
+
+# View all containers (running and Stopped)
+sudo docker ps -a
+
+# View Docker images
+sudo docker image ls
+
+# View container logs
+sudo docker logs <container-name>
+
+# Follow live logs
+sudo docker logs -f <container-name>
+
+# Access running container shell
+sudo docker exec -it <container-name> bash
+
+# Check Docker disk usage
+sudo docker system df
+
+# Remove unused build cache
+sudo docker builder prune
+
+# Remove unused Docker resources
+sudo docker system prune
