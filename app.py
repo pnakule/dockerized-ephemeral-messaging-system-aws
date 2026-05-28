@@ -1,10 +1,13 @@
-from flask import Flask, render_template, request, url_for, jsonify, abort
+from flask import Flask, render_template, request, jsonify
 import mysql.connector
 import uuid
 from datetime import datetime, timedelta
 from config import DB_CONFIG
 
 app = Flask(__name__)
+
+BASE_URL = "https://www.elevateaws.com"
+
 
 # ── Database ──────────────────────────────────────────────────────────────────
 def get_db_connection():
@@ -85,11 +88,8 @@ def create_message():
     cursor.close()
     conn.close()
 
-    link = url_for(
-        "view_message",
-        message_id=message_id,
-        _external=True
-    )
+    # Generate CloudFront/public URL
+    link = f"{BASE_URL}/view/{message_id}"
 
     return render_template("index.html", link=link)
 
