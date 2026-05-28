@@ -1,5 +1,8 @@
 name: EC2 Auto Deploy
 
+# Automatically deploys updated application to EC2
+# whenever code is pushed to the main branch
+
 on:
   push:
     branches:
@@ -14,13 +17,21 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
 
         with:
-          host: ${{ secrets.EC2_HOST }}   
+          # EC2 connection details stored securely in GitHub Secrets
+          host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
 
           script: |
+            # Move into project directory
             cd ~/dockerized-ephemeral-messaging-system-aws
+
+            # Pull latest source code changes
             git fetch origin
             git reset --hard origin/main
+
+            # Stop existing containers
             sudo docker compose down
+
+            # Rebuild and start updated containers
             sudo docker compose up --build -d
