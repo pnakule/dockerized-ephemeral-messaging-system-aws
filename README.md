@@ -1,17 +1,20 @@
 ## Overview
 
-Ephemeral Messaging System is a simple web application where users can create temporary messages that expire after being viewed or after a limited time. The application is deployed on AWS and mainly built for hands-on infrastructure and deployment practice.
+The application is deployed on AWS and mainly built for hands-on infrastructure and deployment practice.
+Ephemeral Messaging System is a simple web application where users can create temporary messages that expire after being viewed or after a limited time.
 This project went through multiple deployment versions during the learning process.
 
 ---
 
 #### Version 1 — AWS Infrastructure Focus
 Focused mainly on learning AWS architecture, automation, and service integrations.
+
 [Version 1 Architecture README](https://github.com/pnakule/ephemeral-messaging-system-aws/blob/main/README.md)
 
 #### Version 2 — Cost Optimized Deployment
 The infrastructure was later simplified to reduce AWS costs while keeping the project publicly accessible as a live demo.
-[Version 2 Architecture README](https://github.com/pnakule/ephemeral-messaging-system-aws/edit/main/LIVE-ARCHITECTURE.md)
+
+[Version 2 Architecture README](https://github.com/pnakule/ephemeral-messaging-system-aws/blob/main/LIVE-ARCHITECTURE.md)
 
 ---
 
@@ -29,37 +32,11 @@ This version was mainly created for learning Docker, CI/CD automation, Linux ope
 
 ## Current Live Architecture
 
-```text
-User
-→ Route 53
-→ CloudFront
-→ EC2
-   ├── NGINX Reverse Proxy Container
-   ├── Flask Application Container
-   └── MySQL Container
-```
+![Dockerized AWS Architecture](./dockerized-ephemeral-architecture.jpg)
 
-## Tech Stack
+## Editable Architecture Diagram
 
-- Python Flask
-- Docker
-- Docker Compose
-- MySQL
-- NGINX
-- GitHub Actions
-- AWS EC2
-- Linux
-
-## CI/CD Flow
-
-```text
-GitHub Commit
-→ GitHub Actions Trigger
-→ Connect to EC2
-→ Pull Latest Code
-→ Docker Compose Rebuild
-→ Updated Version Live
-```
+[View Editable SVG Diagram](./dockerized-ephemeral-architecture.svg)
 
 ## What I Learned
 
@@ -75,7 +52,7 @@ GitHub Commit
 - Learned how to manage multi-container applications using Docker Compose
 - Worked with service dependencies between Flask and MySQL containers
 - Understood container restart behavior and rebuild workflows during deployments
-- Learned how environment variables are managed using `.env` files
+- Learned how application secrets and environment variables are managed using .env files
 
 ### GitHub Actions CI/CD Workflow
 
