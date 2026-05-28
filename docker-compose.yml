@@ -1,41 +1,55 @@
 services:
+
+  # Flask web application container
   app:
     build: .
     container_name: flask-app
     restart: always
 
+    # Internal application port
     expose:
       - "8000"
 
+    # Load environment variables
     env_file:
       - .env
 
+    # Start after MySQL container
     depends_on:
       - mysql
 
+
+  # MySQL database container
   mysql:
     image: mysql:8.0
     container_name: mysql-db
     restart: always
 
+    # Database initialization variables
     environment:
       MYSQL_ROOT_PASSWORD: Ephemeral@0.
       MYSQL_DATABASE: ephemeraldb
 
+    # Expose MySQL port
     ports:
       - "3306:3306"
 
+
+  # NGINX reverse proxy container
   nginx:
     image: nginx:latest
     container_name: nginx-proxy
     restart: always
 
+    # Public HTTP access
     ports:
       - "80:80"
 
+    # Mount custom NGINX configuration
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
 
+    # Start after Flask application container
     depends_on:
       - app
 
