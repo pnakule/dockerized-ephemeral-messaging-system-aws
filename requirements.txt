@@ -1,3 +1,6 @@
+# This application was already running in the environment.
+# requirements.txt was generated using: pip freeze > requirements.txt
+
 blinker==1.9.0
 boto3==1.43.6
 botocore==1.43.6
