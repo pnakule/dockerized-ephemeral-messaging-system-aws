@@ -126,7 +126,7 @@ for deployment environments
 
 ### Estimated Total Cost
 
-~$2–3/month for low-traffic learning and demo usage.
+~$2–4/month for low-traffic learning and demo usage.
 
 ### Overall Understanding
 
