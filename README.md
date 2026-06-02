@@ -119,10 +119,10 @@ for deployment environments
 
 | Service | Approximate Monthly Cost |
 |---|---|
-| EC2 t3.small (0.0208 USD/hour, ~1 hour/day usage) | ~$0.60–1 |
-| 11 GB EBS Storage | ~$1 |
+| EC2 t3.small (0.0208 USD/hour, ~1 hour/day usage) | ~$0.62|
+| 11 GB EBS Storage | ~$0.88 |
 | Route 53 Hosted Zone | ~$0.50 |
-| CloudFront | Free / Very Low (Low Traffic Usage) |
+| other aws services | very low traffic ~$0-1  |
 
 ### Estimated Total Cost
 
